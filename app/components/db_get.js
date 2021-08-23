@@ -5,7 +5,7 @@ const ops = {
     '!=': (name, val) => ({ [name]: { $ne: val } }),
 };
 
-export default ({ table, options }) => {
+export default async ({ table, options }) => {
     const collection = db.collection(table);
     const { limit, reverse, filters } = options || {};
     const findOpts = {};
