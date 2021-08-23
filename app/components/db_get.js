@@ -1,8 +1,8 @@
 import db from '../helpers/mongo.js';
 
 const ops = {
-    '=': (name, val) => ({ [name]: { $literal: val } }),
-    '!=': (name, val) => ({ [name]: { $not: { $literal: val } } }),
+    '=': (name, val) => ({ [name]: { $eq: val } }),
+    '!=': (name, val) => ({ [name]: { $ne: val } }),
 };
 
 export default ({ table, options }) => {
