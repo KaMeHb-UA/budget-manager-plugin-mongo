@@ -1,5 +1,5 @@
 export default () => ({
-    name: 'inmemory-db',
+    name: 'mongo',
     hooks: [
         'db_get',
         'db_add',
