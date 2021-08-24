@@ -11,7 +11,7 @@ export default async ({ table, options }) => {
     const findOpts = {};
     if(filters) for(const [name, op, val] of filters) Object.assign(findOpts, ops[op](name, val));
     let cursor = collection.find(findOpts).sort({
-        time: reverse ? -1 : 1,
+        $natural: reverse ? -1 : 1,
     });
     if(limit) cursor = cursor.limit(limit);
     const found = await cursor.toArray();
